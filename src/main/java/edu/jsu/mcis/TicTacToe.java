@@ -11,7 +11,7 @@ public class TicTacToe {
 	};
 	private Mark[][] grid;
     private boolean playerTurn;	
-    public enum Result {XWINS ("X wins"),OWINS ("O wins"),TIE ("It's a Tie"),NONE ("No contest");
+    public enum Result {XWINS ("X"),OWINS ("O"),TIE ("Tie"),NONE ("NONE");
 		private String message;
         private Result(String s) { message = s; }
         public String message() {

@@ -50,11 +50,10 @@ public class TicTacToeGUI extends JFrame implements ActionListener {
     }
     
     public static void main(String[] args) {
-        TicTacToeGUI panel = new TicTacToeGUI();
-        JFrame frame = new JFrame("Tic Tac Toe");
-		frame.add(panel);
-		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-		frame.pack(); 
+        TicTacToeGUI window = new TicTacToeGUI();
+		window.setTitle("Tic Tac Toe");		
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setSize(400, 400);
+        window.setVisible(true);
     }
 }
