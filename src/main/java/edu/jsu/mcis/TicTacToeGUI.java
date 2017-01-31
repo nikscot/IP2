@@ -36,8 +36,8 @@ public class TicTacToeGUI extends JFrame implements ActionListener {
             }
         }
         model.setMark(row, col);
-        String mark = model.getMark(row, col).representation();
-        button[row][col].setText(mark);
+        String tag = model.getMark(row, col).symbol();
+        button[row][col].setText(tag);
         button[row][col].setEnabled(true);
         TicTacToe.Result result = model.getResult();
         if(result != TicTacToe.Result.NONE) {

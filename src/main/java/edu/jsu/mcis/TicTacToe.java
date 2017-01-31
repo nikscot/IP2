@@ -2,18 +2,20 @@ package edu.jsu.mcis;
 
 public class TicTacToe {
 	public enum Mark {EMPTY, X, O;
-		public String representation() {
-            String n = name().substring(0, 1);
-            if("E".equals(n)) return "";
-            else return n;
+		
+		public String symbol() {
+            String tag = name().substring(0, 1);
+            if("E".equals(tag)) return "";
+            else return tag;
         }
 		
 	};
 	private Mark[][] grid;
     private boolean playerTurn;	
     public enum Result {XWINS ("X"),OWINS ("O"),TIE ("Tie"),NONE ("NONE");
+		
 		private String message;
-        private Result(String s) { message = s; }
+        private Result(String conclusion) { message = conclusion; }
         public String message() {
             return message;
         }
@@ -119,14 +121,17 @@ public class TicTacToe {
 	public String toString() {
         StringBuilder build = new StringBuilder();
         for(int i = 0; i < grid.length; i++) {
-            for(int j = 0; j < grid.length; j++) {
+            
+			for(int j = 0; j < grid.length; j++) {
                 if(grid[i][j] == Mark.EMPTY) build.append(" ");
                 else if(grid[i][j] == Mark.X) build.append("X");
                 else build.append("O");
                 if(j < 2) build.append("|");
             }
-            if(i < 2) build.append("\n-----\n");
+			
+            if(i < 2) build.append("\n--\n");
         }
+		
         return build.toString();
     }
     
